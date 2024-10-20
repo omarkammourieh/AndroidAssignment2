@@ -1,5 +1,6 @@
 package com.example.loginactivity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -12,21 +13,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val emailEditText = findViewById<EditText>(R.id.editTextEmail)
-        val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
-        val loginButton = findViewById<Button>(R.id.buttonLogin)
+        val editTextUsername = findViewById<EditText>(R.id.editTextUsername)
+        val editTextPassword = findViewById<EditText>(R.id.editTextPassword)
+        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
 
-        loginButton.setOnClickListener {
-            val email = emailEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+        buttonLogin.setOnClickListener {
+            val username = editTextUsername.text.toString()
+            val password = editTextPassword.text.toString()
 
-            val validEmail = "user@example.com"
-            val validPassword = "password123"
-
-            if (email == validEmail && password == validPassword) {
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
+            if (username == "kali" && password == "kali") {
+                // Login successful, navigate to the item list
+                val intent = Intent(this, ItemListActivity::class.java)
+                startActivity(intent)
             } else {
-                Toast.makeText(this, "Invalid credentials, please try again", Toast.LENGTH_SHORT).show()
+                // Login failed
+                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
             }
         }
     }
