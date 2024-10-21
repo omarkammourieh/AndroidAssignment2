@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class ItemListActivity : AppCompatActivity() {
 
     private lateinit var recyclerViewItems: RecyclerView
-    private val items = mutableListOf("Pasta", "Banana", "Lasagna", "Mango", "Kiwi","Tomato", "Sushi")
+    private val items = mutableListOf("Tomato", "Apple", "Banana", "Pineapple", "Lord Of The Rings","Friends", "shawarma")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

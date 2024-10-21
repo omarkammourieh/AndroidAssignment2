@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)git remote -v
+        setContentView(R.layout.activity_main)
 
 
         val editTextUsername = findViewById<EditText>(R.id.editTextUsername)
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             val username = editTextUsername.text.toString()
             val password = editTextPassword.text.toString()
 
-            if (username == "kali" && password == "kali") {
+            if (username == "admin" && password == "1234") {
                 // Login successful, navigate to the item list
                 val intent = Intent(this, ItemListActivity::class.java)
                 startActivity(intent)
